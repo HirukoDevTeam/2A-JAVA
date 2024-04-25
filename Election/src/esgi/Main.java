@@ -18,15 +18,19 @@ public class Main {
             switch (randomIndex) {
                 case 0:
                     randomCandidate = macron;
+                    macron.voteFor();
                     break;
                 case 1:
                     randomCandidate = lepen;
+                    lepen.voteFor();
                     break;
                 case 2:
                     randomCandidate = melenchon;
+                    melenchon.voteFor();
                     break;
                 default:
                     randomCandidate = macron; // Par défaut, vote pour Macron
+                    macron.voteFor();
                     break;
             }
             electors[i].voteFor(randomCandidate);
@@ -36,5 +40,9 @@ public class Main {
         for (Elector elector : electors) {
             System.out.println("Électeur " + elector.id + " a voté pour " + elector.vote);
         }
+
+        System.out.println("Candidat : "+ macron.nom +" a reçu "+ macron.voteFor());
+        System.out.println("Candidat : "+ lepen.nom +" a reçu "+ lepen.voteFor());
+        System.out.println("Candidat : "+ melenchon.nom +" a reçu "+ melenchon.voteFor());
     }
 }
